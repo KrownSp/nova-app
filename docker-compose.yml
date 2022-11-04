@@ -54,18 +54,6 @@ services:
     environment:
       - PMA_ARBITRARY=1
 
-  phpmyadmin:
-    depends_on:
-      - mysqldb
-    image: phpmyadmin
-    environment:
-      PMA_HOST: mysqldb
-    links:
-      - mysqldb:mysqldb
-    ports:
-      - 8080:80
-    restart: always
-
 volumes:
   db:
 
